@@ -1,0 +1,104 @@
+// Thuc Pham
+
+import javax.swing.JOptionPane;
+
+public class DiceGame {
+
+	public static void main(String[] args) 
+	{
+		
+		String DiceNumber = null;
+		String player;
+		String userInputUpperCase = "";
+		int count = 1;
+		int oddDice = 0;
+		int even = 0;
+		
+		
+		do
+		{
+		JOptionPane.showMessageDialog(null, "Game Number: " + count ); count++; 	
+		int randomDiceNumber = 0 + (int)(Math.random() * 6);
+		
+		player = JOptionPane.showInputDialog ("Guess if Dice number is EVEN or ODD!");
+		
+		
+			
+		switch(randomDiceNumber)
+		{
+		case 1: 
+			{
+			DiceNumber = "ODD";
+			switch(player.toLowerCase())
+			{
+			case "odd": JOptionPane.showMessageDialog(null,  "Player Win! " + "Winner/Odd percentage is  " + oddDice/count + " %"); oddDice++; break;
+			case "even": JOptionPane.showMessageDialog(null, "Player Loss! Dice number is " + randomDiceNumber + " ODD!"  ); break;
+			}
+			}
+			break;
+		case 2: 
+			{
+			DiceNumber = "EVEN";
+			switch(player.toLowerCase())
+			{
+			case "even": JOptionPane.showMessageDialog(null, "Player Win! " + "Winner/Even percentage is " + even/count + " %"); even++; break;
+			case "odd": JOptionPane.showMessageDialog(null, "Player Loss! Dice number is " + randomDiceNumber + " EVEN! "); break;
+			}
+			}
+			break;
+		case 3: 
+			{
+			DiceNumber = "ODD";
+			switch(player.toLowerCase())
+			{
+			case "odd": JOptionPane.showMessageDialog(null, "Player Win! " + "Winner/Odd percentage is  " + oddDice/count + " %"); oddDice++; break;
+			case "even": JOptionPane.showMessageDialog(null, "Player Loss! Dice number is " + randomDiceNumber + " ODD!"  ); break;
+			}
+			}
+			break;
+		case 4: 
+			{
+			DiceNumber = "EVEN";
+			switch(player.toLowerCase())
+			{
+			case "even": JOptionPane.showMessageDialog(null, "Player Win! "+ "Winner/Even percentage is " + even/count + " %"); even++; break;
+			case "odd": JOptionPane.showMessageDialog(null, "Player Loss! Dice number is " + randomDiceNumber + " EVEN! " ); break;
+			}
+			}
+			break;
+		case 5: 
+			{
+			DiceNumber = "ODD";
+			switch(player.toLowerCase())
+			{
+			case "odd": JOptionPane.showMessageDialog(null,  "Player Win! " + "Winner/Odd percentage is  " + oddDice/count + " %"); oddDice++; break;
+			case "even": JOptionPane.showMessageDialog(null, "Player Loss! Dice number is " + randomDiceNumber + " ODD!"  ); break;
+			}
+			}
+			break;
+		case 6: 
+			{
+			DiceNumber = "EVEN";
+			switch(player.toLowerCase())
+			{
+			case "even": JOptionPane.showMessageDialog(null, "Player Win! "+ "Winner/Even percentage is " + even/count + " %"); even++; break;
+			case "odd": JOptionPane.showMessageDialog(null, "Player Loss! Dice number is " + randomDiceNumber + " EVEN! " ); break;
+			}
+			}
+			break;	
+			}
+		
+		
+			
+		
+		String answer = JOptionPane.showInputDialog( "Do you want to play again? ");
+		userInputUpperCase = answer.toUpperCase();
+		}
+		while ((userInputUpperCase.equals("YES")));
+		JOptionPane.showMessageDialog(null,"Good Bye!");	
+		
+		
+
+	}
+
+}
